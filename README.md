@@ -49,6 +49,11 @@ data = pd.read_csv("./data/raw/creditcard.csv")
 print(data.info())
 print(data.describe())
 ```
+![Screenshot 2025-02-07 040455](https://github.com/user-attachments/assets/42e3709d-8434-4641-8585-d3df5aa14234)
+![Screenshot 2025-02-07 040522](https://github.com/user-attachments/assets/4d704a6d-cf72-4ff7-b688-e0cf5273c72d)
+![Screenshot 2025-02-07 040534](https://github.com/user-attachments/assets/bedd6bac-36e5-41fb-9a73-c5cf22ccc00a)
+![Screenshot 2025-02-07 040541](https://github.com/user-attachments/assets/63acc763-f81f-4617-aa23-f19b2e32639f)
+
 ### Class Imbalance
 ```
 import matplotlib.pyplot as plt
@@ -58,6 +63,9 @@ sns.countplot(x='Class', data=data)
 plt.title("Class Distribution")
 plt.show()
 ```
+![Screenshot 2025-02-07 040609](https://github.com/user-attachments/assets/9ddc8899-1fae-467b-9b5c-04b379bdf8ac)
+![Screenshot 2025-02-07 040614](https://github.com/user-attachments/assets/ca18291f-a26d-48a7-ae95-46351e4ebe55)
+
 ### Correlations
 ```
 import seaborn as sns
@@ -69,6 +77,8 @@ sns.heatmap(corr_matrix, cmap="coolwarm")
 plt.title("Correlation Matrix")
 plt.show()
 ```
+![Screenshot 2025-02-07 040634](https://github.com/user-attachments/assets/be2ffbd6-1d84-44bd-9fcf-5b6f01f69322)
+![Screenshot 2025-02-07 040641](https://github.com/user-attachments/assets/eded4b12-cacd-40a1-bf21-2c21c7e150f7)
 
 ## Usage
 Preprocess data, train the model and evaluate the model by running `credit_card_fraud.py` script:
