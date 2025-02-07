@@ -19,7 +19,6 @@ This project implements anomaly detection using the Isolation Forest algorithm. 
   - **Train-Test Split**: The dataset is split into:
     - **Training Set**: Used to train the anomaly detection model.
     - **Testing Set**: Used for evaluating the model’s performance.
-- Processed data is stored in the `data/processed/` directory.
 
 #### 3. Model Training
 - Train the Isolation Forest model to detect anomalies.
