@@ -1,8 +1,7 @@
-# Anomaly Detection Project
+# Anomaly Detection Using Machine Learning
 
 ## Overview
-This project demonstrates anomaly detection using machine learning.
-
+This project implements anomaly detection using the Isolation Forest algorithm. It is designed to identify fraudulent transactions in credit card datasets. The project follows a structured approach that includes data preprocessing, model training, evaluation, and saving the trained model for future use.
 
 ## Features
 - Data preprocessing
@@ -29,6 +28,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn pyod jupyter
 ```
 
 ## Dataset
+The project uses the Credit Card Fraud Detection Dataset from Kaggle. The dataset contains transactions made by credit cards in September 2013 by European cardholders. It is highly imbalanced, with only 0.172% of transactions labelled as fraudulent.
 - Use an open-source dataset:
   - [Credit Card Fraud Detection Dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 - Download the dataset and place it in the `data/raw/` directory.
@@ -83,36 +83,45 @@ plt.show()
 ## Usage
 Preprocess data, train the model and evaluate the model by running `credit_card_fraud.py` script:
 ```
-python src/credit_card_fraud.py
+python src/main.py
 ```
 
+### 1. Preprocess the Data
+- Loads the dataset
+- Splits it into training and testing sets
+- Standardizes feature values
+
+### 2. Train the Model
+- Trains an Isolation Forest model
+- Evaluates performance
+- Saves the trained model in `models/`
+
+### 3. Evaluate the Model
+- Loads the trained model
+- Tests it on unseen data
+- Displays classification metrics
+
+### 4. Example Output
+
+## Overview of the Outputs
 ### 1. Exploratory Data Analysis (EDA)
 - **Class Distribution**: A bar chart showing the imbalance in classes (e.g., far more "non-fraudulent" samples than "fraudulent" samples).
 - **Correlation Matrix**: A heatmap visualizing the relationships between features.
 - **Insights**: Observations from the data, such as which features are highly correlated with anomalies.
 
-- Example Output:
-  - Class Distribution
-
-  - Correlation Matrix
-
 ### 2. Preprocessed Data
 - **Data Splits**: Processed data divided into training and testing datasets (e.g., `X_train`, `X_test`, `y_train`, `y_test`).
 - **Feature Scaling**: Features are standardized to have a mean of 0 and a standard deviation of 1.
-- Example Output:
 
 ### 3. Training the Model
 - **Training Completion**: A message confirming the training of the model.
 - **Model Saved**: Location where the model is saved (`models/isolation_forest_model.pkl`).
-- Example Output:
 
 ### 4. Model Evaluation
 - **Classification Report**: Metrics such as Precision, Recall, F1-score, and Support for detecting anomalies.
 - **Accuracy**: An overall percentage accuracy for the model.
 - **Confusion Matrix (Optional)**: True Positives (TP), False Positives (FP), True Negatives (TN), False Negatives (FN).
-- Example Output:
-
-- Insights:
+- **Insights**:
   - The model detects anomalies reasonably well given the data imbalance.
   - Precision for the anomaly class (`Class = 1`) may be low due to the class imbalance.
 
@@ -128,7 +137,7 @@ anomaly-detection-project/
 │   ├── raw/          # Raw data files
 ├── notebooks/        # Jupyter notebooks for EDA and model development
 ├── src/              # Source code for scripts
-│   ├── credit_card_fraud.py
+│   ├── main.py
 ├── models/           # Saved models
 ├── README.md         # Project description
 ```
