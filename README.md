@@ -1,12 +1,40 @@
 # Anomaly Detection Using Machine Learning
 
-## Overview
 This project implements anomaly detection using the Isolation Forest algorithm. It is designed to identify fraudulent transactions in credit card datasets. The project follows a structured approach that includes data preprocessing, model training, evaluation, and saving the trained model for future use.
 
-## Features
-- Data preprocessing
-- Model training with Isolation Forest
-- Model evaluation
+## Overview
+<img width="1014" alt="Screenshot 2025-02-07 at 2 39 23 pm" src="https://github.com/user-attachments/assets/a0e64c0e-13f2-4270-8af4-58392222f482" />
+
+### Explanation
+
+#### 1. Data Collection
+- This is the first step, where we acquire the dataset for training and evaluation.
+- The dataset used is the `Credit Card Fraud Detection dataset`.
+- The dataset file (`creditcard.csv`) is stored in the `data/raw/` directory.
+
+#### 2. Data Preprocessing
+- Clean and transform the raw dataset to prepare it for machine learning.
+  - **Feature Selection**: We remove unnecessary columns and extract relevant features.
+  - **Feature Scaling**: Normalize numerical data using `StandardScaler` to ensure uniformity.
+  - **Train-Test Split**: The dataset is split into:
+    - **Training Set**: Used to train the anomaly detection model.
+    - **Testing Set**: Used for evaluating the model’s performance.
+- Processed data is stored in the `data/processed/` directory.
+
+#### 3. Model Training
+- Train the Isolation Forest model to detect anomalies.
+  - **Algorithm Choice**: Isolation Forest is selected due to its efficiency in detecting outliers.
+  - **Model Training**: The model is trained on the training dataset (X_train, y_train).
+  - **Model Saving**: The trained model is saved as `isolation_forest_model.pkl` in the `models/` directory.
+
+#### 4. Model Evaluation
+- Test the trained model on unseen data and analyze its performance.
+  - **Loading the Model**: The saved model is loaded from `models/isolation_forest_model.pkl`.
+  - **Making Predictions**: The model predicts anomalies in the test dataset (`X_test`).
+  - **Performance Metrics**: The results are evaluated using:
+    - **Precision**: How many detected anomalies were actually frauds?
+    - **Recall**: How many actual frauds were detected?
+    - **F1-score**: A balance between precision and recall.
 
 ## Installation
 ```bash
