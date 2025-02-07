@@ -102,6 +102,8 @@ python src/main.py
 - Displays classification metrics
 
 ### 4. Example Output
+![Screenshot 2025-02-07 140303](https://github.com/user-attachments/assets/b5d859b3-bee0-44aa-a95d-dd604e480e15)
+![Screenshot 2025-02-07 140310](https://github.com/user-attachments/assets/50889272-1c0b-44d2-88c9-a9d54cd5e63e)
 
 ## Overview of the Outputs
 ### 1. Exploratory Data Analysis (EDA)
